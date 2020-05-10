@@ -3,15 +3,19 @@ package jp.co.metlife.api.esign;
 public class esign {
 	
 	private final String signerName;
-	private final String documentId;
+	private final String documentLocation;
+	private final String agentCode;
+	private final String agentName;
 	private final String communicationChannel;
 	private final String emailId;
 	private final String mobileNumber;
 	private final String lineId;
 
-	public esign(String signerName, String documentId, String communicationChannel, String emailId, String mobileNumber, String lineId) {
+	public esign(String signerName, String documentLocation, String communicationChannel, String emailId, String mobileNumber, String lineId) {
+		this.agentCode = "";
+		this.agentName = "";
 		this.signerName = signerName;
-		this.documentId = documentId;
+		this.documentLocation = documentLocation;
 		this.communicationChannel = communicationChannel;
 		this.emailId = emailId;
 		this.mobileNumber = mobileNumber;
@@ -22,9 +26,6 @@ public class esign {
 		return signerName;
 	}
 
-	public String getDocumentId() {
-		return documentId;
-	}
 
 	public String getCommunicationChannel() {
 		return communicationChannel;
@@ -40,6 +41,18 @@ public class esign {
 
 	public String getLineId() {
 		return lineId;
+	}
+
+	public String getDocumentLocation() {
+		return documentLocation;
+	}
+
+	public String getAgentCode() {
+		return agentCode;
+	}
+
+	public String getAgentName() {
+		return agentName;
 	}
 
 }
